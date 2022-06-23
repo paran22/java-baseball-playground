@@ -3,7 +3,8 @@ package baseball;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
+
+import static baseball.Baseball.NUMBER_OF_BALLS;
 
 public class Balls {
     private List<Integer> balls;
@@ -18,7 +19,7 @@ public class Balls {
     public static Balls createAnswer() {
         Random random = new Random();
         List<Integer> answer = new ArrayList<>();
-        while (answer.size() < 3) {
+        while (answer.size() < NUMBER_OF_BALLS) {
             int ball = random.nextInt(10);
             if (!answer.contains(ball)) {
                 answer.add(ball);

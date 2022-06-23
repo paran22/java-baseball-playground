@@ -8,6 +8,7 @@ class BallsTest {
 
     private Balls answer;
 
+
     @BeforeEach
     void createAnswer() {
         answer = Balls.createAnswer();
