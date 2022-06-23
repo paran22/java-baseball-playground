@@ -1,4 +1,4 @@
-package StringCalculator;
+package stringCalculator;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -20,6 +20,12 @@ class StringCalculatorTest {
     @Test
     void throwExceptionIfInputIsEmpty() {
         String input = "";
+        Assertions.assertThatThrownBy(() -> StringCalculator.calculate(input)).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    void throwExceptionIfInputNotStartWithNumber() {
+        String input = "as2";
         Assertions.assertThatThrownBy(() -> StringCalculator.calculate(input)).isInstanceOf(IllegalArgumentException.class);
     }
 
