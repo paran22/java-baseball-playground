@@ -1,8 +1,6 @@
 package baseball;
 
-import java.util.List;
-
-import static baseball.Baseball.NUMBER_OF_BALLS;
+import static baseball.Baseball.QUANTITY_OF_BALL;
 
 public class BallNumber {
     private int ballCnt;
@@ -28,12 +26,12 @@ public class BallNumber {
         int ballCnt = 0;
         int strikeCnt = 0;
 
-        for (int i = 0; i < NUMBER_OF_BALLS; i++) {
+        for (int i = 0; i < QUANTITY_OF_BALL; i++) {
             if (Integer.parseInt(inputs[i]) == answer.getBalls().get(i)) {
                 strikeCnt++;
                 continue;
             }
-            for (int j = 0; j < NUMBER_OF_BALLS; j++) {
+            for (int j = 0; j < QUANTITY_OF_BALL; j++) {
                 if (Integer.parseInt(inputs[i]) == answer.getBalls().get(j)) {
                     ballCnt++;
                 }
