@@ -43,39 +43,4 @@ public class BallNumberTest {
         Assertions.assertThat(ballNumber.getStrikeCnt()).isEqualTo(1);
     }
 
-    @Test
-    void throwExceptionWhenInputIsNull() {
-        String input = null;
-        Assertions.assertThatThrownBy(() -> BallNumber.getBallNumber(answer, input))
-                .isInstanceOf(IllegalArgumentException.class);
-    }
-
-    @Test
-    void throwExceptionWhenInputIsEmpty() {
-        String input = "";
-        Assertions.assertThatThrownBy(() -> BallNumber.getBallNumber(answer, input))
-                .isInstanceOf(IllegalArgumentException.class);
-    }
-
-    @Test
-    void throwExceptionWhenInputWithNotNumber() {
-        String input = "1sg";
-        Assertions.assertThatThrownBy(() -> BallNumber.getBallNumber(answer, input))
-                .isInstanceOf(IllegalArgumentException.class);
-    }
-
-    @Test
-    void throwExceptionWhenInputSizeOverFour() {
-        String input = "1234";
-        Assertions.assertThatThrownBy(() -> BallNumber.getBallNumber(answer, input))
-                .isInstanceOf(IllegalArgumentException.class);
-    }
-
-    @Test
-    void passValidatorWhenInputIncludesSpace() {
-        String input = "123 ";
-        Assertions.assertThatCode(() -> BallNumber.getBallNumber(answer, input)).doesNotThrowAnyException();
-    }
-
-
 }

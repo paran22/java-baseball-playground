@@ -6,6 +6,10 @@ public class BallNumber {
     private int ballCnt;
     private int strikeCnt;
 
+    public BallNumber() {
+        this.ballCnt = 0;
+        this.strikeCnt = 0;
+    }
     public BallNumber(int ballCnt, int strikeCnt) {
         this.ballCnt = ballCnt;
         this.strikeCnt = strikeCnt;
@@ -20,7 +24,6 @@ public class BallNumber {
     }
 
     public static BallNumber getBallNumber(Balls answer, String input) {
-        validator(input);
         String[] inputs = input.trim().split("");
 
         int ballCnt = 0;
@@ -41,12 +44,5 @@ public class BallNumber {
         return new BallNumber(ballCnt, strikeCnt);
     }
 
-    private static void validator(String input) {
-        if (input == null || input.isEmpty()) {
-            throw new IllegalArgumentException("숫자를 입력해주세요.");
-        }
-        if (!input.trim().matches("^\\d{3}$")) {
-            throw new IllegalArgumentException("숫자만 3자리 입력해주세요.");
-        }
-    }
+
 }
