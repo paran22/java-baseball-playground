@@ -20,4 +20,8 @@ public class BallCount {
     public void plusStrikeCount() {
         this.ballCount += 1;
     }
+
+    public void plusBallCount() {
+        this.ballCount += 1;
+    }
 }

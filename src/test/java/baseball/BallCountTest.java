@@ -23,7 +23,7 @@ class BallCountTest {
 
     @Test
     void plusBallCountTest() {
-        ballCount.plusStrikeCount();
+        ballCount.plusBallCount();
         Assertions.assertThat(ballCount.getBallCount()).isEqualTo(1);
     }
 
