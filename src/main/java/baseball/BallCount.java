@@ -17,11 +17,20 @@ public class BallCount {
         return ballCount;
     }
 
-    public void plusStrikeCount() {
-        this.ballCount += 1;
+    private void plusStrikeCount() {
+        this.strikeCount += 1;
     }
 
     public void plusBallCount() {
         this.ballCount += 1;
+    }
+
+    public void changeBallCountByResult(MatchResult result) {
+        if (result.isStrike()) {
+            this.plusStrikeCount();
+        }
+        if (result.isBall()) {
+            this.plusBallCount();
+        }
     }
 }

@@ -4,8 +4,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class BallCountTest {
 
     private BallCount ballCount;
@@ -17,14 +15,24 @@ class BallCountTest {
 
     @Test
     void plusStrikeCountTest() {
-        ballCount.plusStrikeCount();
+        MatchResult result = MatchResult.STRIKE;
+        ballCount.changeBallCountByResult(result);
         Assertions.assertThat(ballCount.getStrikeCount()).isEqualTo(1);
     }
 
     @Test
     void plusBallCountTest() {
-        ballCount.plusBallCount();
+        MatchResult result = MatchResult.BALL;
+        ballCount.changeBallCountByResult(result);
         Assertions.assertThat(ballCount.getBallCount()).isEqualTo(1);
+    }
+
+    @Test
+    void nothingTest() {
+        MatchResult result = MatchResult.NOTHING;
+        ballCount.changeBallCountByResult(result);
+        Assertions.assertThat(ballCount.getBallCount()).isEqualTo(0);
+        Assertions.assertThat(ballCount.getStrikeCount()).isEqualTo(0);
     }
 
 }
