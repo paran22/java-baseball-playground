@@ -14,13 +14,13 @@ public class Balls {
     }
 
     public BallCount match(Balls input) {
+        BallCount ballCount = new BallCount();
         for (Ball ball : balls) {
             for (Ball inputBall : input.getBalls()) {
                 MatchResult result = ball.getMatchResult(inputBall);
-
+                ballCount.changeBallCountByResult(result);
             }
-
         }
-        return new BallCount();
+        return ballCount;
     }
 }

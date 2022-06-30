@@ -3,7 +3,6 @@ package baseball;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +29,5 @@ class BallsTest {
 
         Assertions.assertThat(ballCount.getStrikeCount()).isEqualTo(1);
         Assertions.assertThat(ballCount.getBallCount()).isEqualTo(1);
-
     }
-
 }
