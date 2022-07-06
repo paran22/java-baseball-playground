@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static baseball.Balls.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BallsTest {
@@ -29,5 +30,35 @@ class BallsTest {
 
         Assertions.assertThat(ballCount.getStrikeCount()).isEqualTo(1);
         Assertions.assertThat(ballCount.getBallCount()).isEqualTo(1);
+    }
+
+    @Test
+    void checkAnswerBallsSize() {
+        Balls answer = makeAnswer();
+        Assertions.assertThat(answer.getBalls().size()).isEqualTo(BALL_QUANTITY);
+    }
+
+    @Test
+    void checkInputBallsSize() {
+        String input = "123";
+        Balls inputBalls = makeInput(input);
+        Assertions.assertThat(inputBalls.getBalls().size()).isEqualTo(BALL_QUANTITY);
+        Assertions.assertThat(inputBalls.getBalls().get(1).getValue()).isEqualTo(2);
+    }
+
+    @Test
+    void checkInput_ThrowExceptionCase1() {
+        String input = "1234";
+        assertThrows(IllegalArgumentException.class, () -> {
+            Balls inputBalls = makeInput(input);
+        });
+    }
+
+    @Test
+    void checkInput_ThrowExceptionCase2() {
+        String input = "104";
+        assertThrows(IllegalArgumentException.class, () -> {
+            Balls inputBalls = makeInput(input);
+        });
     }
 }
