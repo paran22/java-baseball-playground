@@ -41,7 +41,6 @@ class BallsTest {
     @Test
     void checkInputBallsSize() {
         String input = "123";
-        Balls inputBalls = makeInput(input);
         Assertions.assertThat(inputBalls.getBalls().size()).isEqualTo(BALL_QUANTITY);
         Assertions.assertThat(inputBalls.getBalls().get(1).getValue()).isEqualTo(2);
     }

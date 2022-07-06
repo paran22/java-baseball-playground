@@ -1,10 +1,9 @@
 package baseball;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 public class Balls {
     private List<Ball> balls;
@@ -13,8 +12,6 @@ public class Balls {
     public Balls(List<Ball> balls) {
         this.balls = balls;
     }
-
-
 
     public List<Ball> getBalls() {
         return balls;
@@ -56,7 +53,7 @@ public class Balls {
 
     public static Balls makeInput(String input) {
         if (!isOneToNineAndBallQuantity(input)) {
-            throw new IllegalArgumentException("숫자는 1~9까지 서로 다른 수로 입력해주세요");
+            throw new IllegalArgumentException("숫자는 1~9까지 3자리수로 입력해주세요");
         }
 
         String[] array = input.split("");
@@ -69,5 +66,14 @@ public class Balls {
 
     private static boolean isOneToNineAndBallQuantity(String input) {
         return input.matches("^[1-9]{3}$");
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder output = new StringBuilder();
+        for (Ball ball : balls) {
+            output.append(ball.getValue());
+        }
+        return output.toString();
     }
 }
